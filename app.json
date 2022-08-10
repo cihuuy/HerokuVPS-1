@@ -8,7 +8,7 @@
     ],
     "env": {},
     "website": "",
-    "repository": "",
-    "logo": "",
+    "repository": "https://github.com/LNKNITE/HerokuVPS",
+    "logo": "https://raw.githubusercontent.com/LNKNITE/HerokuVPS/main/assets/ubuntu-logo.png",
     "stack": "container"
 }
