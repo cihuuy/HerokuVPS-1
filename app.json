@@ -1,0 +1,14 @@
+{
+    "name": "Heroku VPS",
+    "description": "Deploy Ubuntu noVNC to Heroku.",
+    "keywords": [
+        "VNC",
+        "Docker",
+        "noVNC"
+    ],
+    "env": {},
+    "website": "",
+    "repository": "",
+    "logo": "",
+    "stack": "container"
+}
