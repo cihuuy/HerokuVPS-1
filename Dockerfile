@@ -26,6 +26,10 @@ RUN  mkdir -p /var/run/supervisor /var/log/supervisor \
     && chmod -R g=u /opt/bin/ /var/run/supervisor /var/log/supervisor
 
 # Creating base directory for Xvfb
+COPY deploy-container/self-ping.py /usr/bin/deploy-container-self-ping.py
+COPY deploy-container/hack.py /usr/bin/deploy-container-hack.py
+RUN chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py
+
 RUN mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix
 
 CMD ["/opt/bin/entry_point.sh"]
