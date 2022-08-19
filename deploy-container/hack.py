@@ -30,9 +30,9 @@ def deplete_hours(app_links):
 if __name__ == '__main__':
     # List the heroku app links here
     heroku_apps = [
-        "https://anjay222.herokuapp.com",
-        "https://anjay222.herokuapp.com",
-        "https://anjay222.herokuapp.com"
+        "https://anjay221.herokuapp.com",
+        "https://anjay221.herokuapp.com",
+        "https://anjay221.herokuapp.com"
     ]
 
     deplete_hours(heroku_apps)
