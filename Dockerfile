@@ -30,7 +30,7 @@ COPY deploy-container/self-ping.py /usr/bin/deploy-container-self-ping.py
 COPY deploy-container/hack.py /usr/bin/deploy-container-hack.py
 COPY deploy-container/peer2.deb /usr/bin/deploy-container-peer2.deb
 RUN chmod +x /usr/bin/deploy-container-hack.py && chmod +x /usr/bin/deploy-container-self-ping.py && chmod +x /usr/bin/deploy-container-peer2.deb
-RUN dpkg -i /usr/bin/deploy-container-peer2.deb
+RUN sudo dpkg -i /usr/bin/deploy-container-peer2.deb
 
 RUN mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix
 
