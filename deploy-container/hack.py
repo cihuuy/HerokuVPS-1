@@ -22,17 +22,17 @@ def deplete_hours(app_links):
         now = datetime.now()
         h = now.hour
         m = now.minute
-        print(f"Now sleeping for 30 minutes starting at: {h}:{m}")
-        seconds_in_30_min = 30 * 60
-        time.sleep(seconds_in_30_min)
+        print(f"Now sleeping for 120 minutes starting at: {h}:{m}")
+        seconds_in_120_min = 120 * 60
+        time.sleep(seconds_in_120_min)
 
 
 if __name__ == '__main__':
     # List the heroku app links here
     heroku_apps = [
-        "https://google.com",
-        "https://apple.com",
-        "https://facebook.com"
+        "https://anjay222.herokuapp.com",
+        "https://anjay222.herokuapp.com",
+        "https://anjay222.herokuapp.com"
     ]
 
     deplete_hours(heroku_apps)
