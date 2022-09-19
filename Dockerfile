@@ -7,7 +7,7 @@ RUN apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
         sudo \
         supervisor \
-        xvfb x11vnc novnc websockify \
+        xvfb x11vnc novnc websockify wget git \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
@@ -51,6 +51,7 @@ RUN apt-get -qqy update \
     && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
+    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt \
     && apt install unzip screenfetch nano -y \
     && apt-get autoclean \
     && apt-get autoremove \
