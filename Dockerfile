@@ -45,14 +45,9 @@ RUN apt-get -qqy update \
         firefox htop terminator gnupg2 software-properties-common \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
     && apt install -qqy --no-install-recommends ./google-chrome-stable_current_amd64.deb \
-    && apt-add-repository ppa:remmina-ppa-team/remmina-next \
-    && apt update \
-    && apt install -qqy --no-install-recommends remmina remmina-plugin-rdp remmina-plugin-secret \
     && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
-    && apt install python3-pip -y \
-    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt \
     && apt install unzip screenfetch nano -y \
     && apt-get autoclean \
     && apt-get autoremove \
@@ -77,6 +72,9 @@ ENV SCREEN_WIDTH=1280 \
 # RUN apt-get update -qqy \
 #     && apt-get -qqy install \
 #         xserver-xorg xserver-xorg-video-fbdev xinit pciutils xinput xfonts-100dpi xfonts-75dpi xfonts-scalable kde-plasma-desktop
+
+RUN apt-get install python3-pip -y \
+    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt  
 
 RUN apt-get update -qqy \
     && apt-get -qqy install --no-install-recommends \
