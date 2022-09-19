@@ -53,6 +53,9 @@ RUN apt-get -qqy update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+RUN apt-get install python3-pip -y \
+    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt 
+
 # COPY conf.d/* /etc/supervisor/conf.d/
 
 
@@ -73,8 +76,7 @@ ENV SCREEN_WIDTH=1280 \
 #     && apt-get -qqy install \
 #         xserver-xorg xserver-xorg-video-fbdev xinit pciutils xinput xfonts-100dpi xfonts-75dpi xfonts-scalable kde-plasma-desktop
 
-RUN apt-get install python3-pip -y \
-    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt  
+ 
 
 RUN apt-get update -qqy \
     && apt-get -qqy install --no-install-recommends \
