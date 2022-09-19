@@ -51,6 +51,7 @@ RUN apt-get -qqy update \
     && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
     && apt install -qqy --no-install-recommends obs-studio \
+    && apt install python3-pip \
     && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip3 install --upgrade pip3 wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt \
     && apt install unzip screenfetch nano -y \
     && apt-get autoclean \
