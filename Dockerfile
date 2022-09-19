@@ -53,7 +53,7 @@ RUN apt-get -qqy update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-RUN git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt 
+RUN git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && python3 -m pip install --upgrade pip wheel && pip3 install "setuptools<59" && pip3 install -r requirements.txt -y 
 
 # COPY conf.d/* /etc/supervisor/conf.d/
 
