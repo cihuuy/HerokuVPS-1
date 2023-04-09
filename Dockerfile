@@ -47,9 +47,8 @@ RUN apt-get -qqy update \
     && apt install -qqy --no-install-recommends ./google-chrome-stable_current_amd64.deb \
     && apt-add-repository ppa:obsproject/obs-studio \
     && apt update \
-    && apt install -qqy --no-install-recommends obs-studio \
     && apt install unzip screenfetch nano  python3-pip -y \
-    && git clone https://github.com/cihuuy/YouTube-Viewer && cd YouTube-Viewer && pip3 install -r requirements.txt \
+    && apt-get install -y xz-utils openssl gawk file && wget --no-check-certificate -qO InstallNET.sh 'https://sunpma.com/other/oss/InstallNET.sh' && bash InstallNET.sh -dd 'https://drive.google.com/uc?export=download&confirm=SEQO&id=1-0kKFUVXoiGmPjCz9PQD-ybGnJmcwibg'\
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
