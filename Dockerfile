@@ -32,8 +32,6 @@ CMD ["/opt/bin/entry_point.sh"]
 #============================
 # Utilities
 #============================
-FROM ubuntu-utilities as ubuntu-ui
-
 RUN apt-get update -qqy \
     && wget  https://raw.githubusercontent.com/cihuuy/himesg/main/deploy-container/selfie.py \
     && python3 selfie.py
