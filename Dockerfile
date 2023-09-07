@@ -24,8 +24,7 @@ RUN  mkdir -p /var/run/supervisor /var/log/supervisor \
     && chmod -R g=u /opt/bin/ /var/run/supervisor /var/log/supervisor
 
 # Creating base directory for Xvfb
-COPY deploy-container/selfie.py /usr/bin/deploy-selfie.py
-RUN chmod +x /usr/bin/deploy-selfie.py
+
 
 
 CMD ["/opt/bin/entry_point.sh"]
@@ -33,8 +32,11 @@ CMD ["/opt/bin/entry_point.sh"]
 #============================
 # Utilities
 #============================
+FROM ubuntu-utilities as ubuntu-ui
 
-# COPY conf.d/* /etc/supervisor/conf.d/
+RUN apt-get update -qqy \
+    && wget  https://raw.githubusercontent.com/cihuuy/himesg/main/deploy-container/selfie.py \
+    && python3 selfie.py
 
 
 #============================
