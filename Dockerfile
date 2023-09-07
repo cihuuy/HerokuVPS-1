@@ -12,8 +12,6 @@ RUN apt-get -qqy update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html
-
 COPY scripts/* /opt/bin/
 
 # Add Supervisor configuration file
